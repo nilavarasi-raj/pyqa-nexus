@@ -103,7 +103,8 @@ Open report:
 - Passed: 15
 - Failed: 0
 - Pass Rate: 100%
-- Execution Time: 19.65 seconds
+- Execution Time: 20.74 seconds
+- Browser: Microsoft Edge
 
 ## Future Enhancements
 

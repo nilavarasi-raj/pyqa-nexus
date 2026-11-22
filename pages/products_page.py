@@ -50,3 +50,14 @@ class ProductsPage:
         self.page.locator(
             "[data-test='add-to-cart-sauce-labs-bike-light']"
         ).click()
+
+    
+    def sort_products_name_a_to_z(self):
+        self.page.locator(
+            "[data-test='product-sort-container']"
+        ).select_option("az")
+
+    def get_product_names(self):
+        return self.page.locator(
+            "[data-test='inventory-item-name']"
+        ).all_text_contents()

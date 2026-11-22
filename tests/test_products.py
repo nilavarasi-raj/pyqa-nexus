@@ -72,3 +72,29 @@ def test_products_sort_high_to_low(page: Page):
     assert actual_prices == sorted(actual_prices, reverse=True), (
         f"Product prices are not sorted High to Low: {actual_prices}"
     )
+
+
+def test_products_sort_name_a_to_z(page: Page):
+    # Initialize Page Objects
+    login_page = LoginPage(page)
+    products_page = ProductsPage(page)
+
+    # Step 1: Login
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
+
+    # Step 2: Verify Products page
+    products_page.verify_products_page()
+
+    # Step 3: Sort products by name (A to Z)
+    products_page.sort_products_name_a_to_z()
+
+    # Step 4: Get displayed product names
+    actual_names = products_page.get_product_names()
+
+    # Step 5: Verify alphabetical order
+    assert len(actual_names) > 1, "Not enough products to verify sorting"
+
+    assert actual_names == sorted(actual_names), (
+        f"Products are not sorted A to Z: {actual_names}"
+    )

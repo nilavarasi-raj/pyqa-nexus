@@ -27,10 +27,14 @@ class CartPage:
     def verify_cart_count(self, count: str):
         expect(self.cart_badge).to_have_text(count)
 
+    
     def verify_backpack_in_cart(self):
-        expect(self.product_name).to_have_text(
-            "Sauce Labs Backpack"
-        )
+        backpack = self.page.locator(
+            ".cart_item [data-test='inventory-item-name']"
+        ).filter(has_text="Sauce Labs Backpack")
+
+        expect(backpack).to_have_count(1)
+        expect(backpack).to_have_text("Sauce Labs Backpack")
 
     def remove_backpack(self):
         self.remove_backpack_button.click()
