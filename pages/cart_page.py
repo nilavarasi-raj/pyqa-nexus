@@ -41,3 +41,11 @@ class CartPage:
         expect(self.cart_link).to_have_attribute(
             "aria-label", "Cart, empty"
         )
+
+    def verify_multiple_products_in_cart(self):
+        expect(self.cart_items).to_have_count(2)
+
+        expect(self.product_name).to_have_text([
+            "Sauce Labs Backpack",
+            "Sauce Labs Bike Light"
+        ])

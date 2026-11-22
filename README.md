@@ -18,6 +18,7 @@ SauceDemo e-commerce application.
 - Page Object Model (POM)
 - pytest-html
 - Microsoft Edge
+- Data-Driven Testing (Pytest Parametrize)
 
 ## Application Under Test
 
@@ -98,10 +99,11 @@ Open report:
 
 ## Current Execution Results
 
-- Total Tests: 5
-- Passed: 5
+- Total Test Executions: 15
+- Passed: 15
 - Failed: 0
 - Pass Rate: 100%
+- Execution Time: 19.65 seconds
 
 ## Future Enhancements
 

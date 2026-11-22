@@ -62,3 +62,27 @@ def test_remove_product_from_cart(page: Page):
     # Step 8: Verify cart is empty
     cart_page.verify_cart_empty()
 
+
+def test_add_multiple_products_to_cart(page: Page):
+
+    # Initialize Page Objects
+    login_page = LoginPage(page)
+    products_page = ProductsPage(page)
+    cart_page = CartPage(page)
+
+    # Step 1: Login
+    login_page.navigate()
+    login_page.login("standard_user", "secret_sauce")
+
+    # Step 2: Add two different products
+    products_page.add_backpack_to_cart()
+    products_page.add_bike_light_to_cart()
+
+    # Step 3: Verify cart badge count
+    cart_page.verify_cart_count("2")
+
+    # Step 4: Open cart
+    cart_page.open_cart()
+
+    # Step 5: Verify two products in cart
+    cart_page.verify_multiple_products_in_cart()

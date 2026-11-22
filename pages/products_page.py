@@ -25,3 +25,28 @@ class ProductsPage:
         self.page.locator(
             "[data-test='add-to-cart-sauce-labs-backpack']"
         ).click()
+ 
+    def sort_products_low_to_high(self):
+        self.page.locator(
+            "[data-test='product-sort-container']"
+        ).select_option("lohi")
+
+    def get_product_prices(self):
+        price_elements = self.page.locator(
+            "[data-test='inventory-item-price']"
+        ).all_text_contents()
+
+        return [
+            float(price.replace("$", ""))
+            for price in price_elements
+        ]
+
+    def sort_products_high_to_low(self):
+        self.page.locator(
+            "[data-test='product-sort-container']"
+        ).select_option("hilo")
+
+    def add_bike_light_to_cart(self):
+        self.page.locator(
+            "[data-test='add-to-cart-sauce-labs-bike-light']"
+        ).click()
