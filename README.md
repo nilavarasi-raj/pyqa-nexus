@@ -55,7 +55,7 @@ pyqa-nexus/
 
 Clone the repository:
 
-    git clone https://github.com/YOUR_USERNAME/pyqa-nexus.git
+    git clone https://github.com/nilavarasi-raj/pyqa-nexus.git
 
 Navigate to the project:
 
