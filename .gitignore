@@ -1,0 +1,24 @@
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Test reports and artifacts
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+report.html
+
+# Environment variables
+.env
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
