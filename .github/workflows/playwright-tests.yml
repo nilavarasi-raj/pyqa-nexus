@@ -32,7 +32,7 @@ jobs:
 
       - name: Run automation tests
         run: |
-          python -m pytest tests/ --browser chromium -v --html=report.html --self-contained-html --tracing=retain-on-failure
+          python -m pytest tests/ --browser chromium -v --html=report.html --self-contained-html --screenshot=only-on-failure --tracing=retain-on-failure
 
       - name: Upload test reports
         if: always()
